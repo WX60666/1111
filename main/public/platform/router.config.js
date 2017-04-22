@@ -17,12 +17,12 @@ let config = {
     routes:[
         {path:"/Base", component:Base,
             children:[
-                {path: '/ProductManage', component: ProductManage},
-                {path: "/AppManage", component: AppManage},
-                {path: "/DataCenter", component: DataCenter},
-                {path: "/Help", component: Help},
-                {path: "/Mall", component: Mall},
-                {path: "/ProduceCenter", component: ProduceCenter},
+                {path: '/Base/ProductManage', component: ProductManage},
+                {path: "/Base/AppManage", component: AppManage},
+                {path: "/Base/DataCenter", component: DataCenter},
+                {path: "/Base/Help", component: Help},
+                {path: "/Base/Mall", component: Mall},
+                {path: "/Base/ProduceCenter", component: ProduceCenter},
             ]
         },
         {path:"/Login", component: Login},
