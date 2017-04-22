@@ -1,0 +1,146 @@
+@charset "UTF-8";
+
+@import "box";
+@import "color";
+@import "func";
+
+/*
+  Tools & funcs
+ */
+
+.bcBorderTrans {
+  border: 1px solid $clearColor;
+}
+
+.bcBorder {
+  border: 1px solid $cBorderAct;
+}
+
+.ecNormalWg {
+  //margin: 0;
+  background: $cTxtBg;
+  padding: $bcPaddingTop $bcPaddingLeft;
+}
+.ecNormalWgThin {
+  //margin: 0;
+  background: $cTxtBg;
+  padding: $bcPaddingTopThin $bcPaddingLeft;
+}
+
+.ecFirstLineChild {
+  // display: inline-block;
+  line-height: $bcLineHeightChild + 0.2em;
+}
+
+/*
+  All elements
+ */
+
+body {
+  text-align: center;
+}
+
+button {
+  @extend .bcRadius;
+
+  @extend .ccNormal;
+  font-size: 0.9em;
+}
+button:hover {
+   @extend .ccActive;
+}
+
+.buttonInLine:hover,
+.buttonInLine {
+  border: none;
+  background: none;
+}
+
+h1 {
+  @extend .ctQuote;
+  padding: 0.618em;
+  margin: 0;
+}
+
+label {
+  @extend .ctNormal;
+}
+
+input {
+  @extend .ctNormal;
+  @extend .bcRadius;
+  @extend .ecNormalWg;
+
+  @extend .bcBorderTrans;
+}
+
+select {
+  @extend .bcBorder;
+  @extend .ecNormalWg;
+
+  @include appearance(none);
+  box-sizing: content-box;
+}
+
+/*
+  Table related.
+ */
+table {
+  @extend .bcRadius;
+
+  //padding: 0.3em;
+  margin: $bcMarginArea;
+  border-collapse: collapse;
+  font-size: $bcFontInside;
+}
+//tr:nth-child(even) { border-top-color: #CCC; }
+//tr:nth-child(odd) { border-top-color: alphaBy($primaryText, 0.0); }
+tr { border-top: 1px solid alphaBy($primaryText, 0.025) }
+tr:nth-child(1) {
+  background: alphaBy($primaryText, 0.03);
+  border-top: 1px solid alphaBy($primaryText, 0.0)
+}
+th { text-align: center; font-size: $bcFontHeader; }
+td { text-align: left; }
+th, td {
+  margin: 0;
+  padding: $bcPaddingTop $bcPaddingLeft;
+}
+
+/*
+  Form related.
+ */
+form {
+  @extend .bcRadius;
+
+  //padding: 0.3em;
+  margin: $bcMarginArea;
+  border-collapse: collapse;
+  font-size: $bcFontInside;
+}
+form>div,
+form label,
+form select,
+form input {
+  line-height: $bcLineHeightChild;
+}
+form>label {
+  display: inline-block;
+  text-align: right;
+}
+form select,
+form>input {
+  margin: 1px 1em 1px 0;
+  text-align: left;
+}
+
+/*
+  Footer
+ */
+footer {
+  @extend .ctTip;
+
+  font-size: $bcFontTip;
+  text-align: center;
+  margin: 3em;
+}

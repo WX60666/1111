@@ -1,0 +1,11 @@
+.idea
+dist
+dev
+/lib
+node_modules
+.sass-cache/
+main/common
+main/css
+temp
+.DS_Store
+*~

@@ -1,0 +1,69 @@
+@charset "UTF-8";
+
+@import "../../styles/defaultStyles";
+
+#mainBoard {
+  width: 1280px;
+  height: auto;
+  min-height: 80%;
+  margin: 2em auto;
+  /*text-align: left;*/
+}
+
+#toolBar {
+  width: 100%;
+  line-height: 3em;
+}
+
+button {
+  min-width: 4em;
+  line-height: 2em;
+  margin: 0.2em;
+  float: right;
+}
+
+form,
+#listBoard table {
+  width: 100%;
+
+  background: alphaBy($primaryText, 0.03);
+}
+
+form {
+  label {
+    width: 15%;
+    min-width: 5em;
+    max-width: 8em;
+  }
+
+  input,
+  select {
+    width: 80%;
+    min-width: 8em;
+    max-width: 32em;
+  }
+}
+
+.tc_icon {
+  width: 4em;
+}
+
+#refresh {
+  float: left !important;
+}
+
+#listBoard {
+  width: 62%;
+  box-sizing: border-box;
+  float: left;
+}
+
+#infoBoard {
+  width: 38%;
+  box-sizing: border-box;
+  float: left;
+}
+
+.clearAll {
+  clear: both;
+}

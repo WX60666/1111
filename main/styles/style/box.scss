@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+/*
+
+padding 和 margin 基本使用:
+  bcPaddingLeft: 用于大多数需要和左右边进行边框隔离的控件左padding.
+  bcPaddingTop: 用于大多数需要和上下边进行边框隔离的控件padding.
+  bcPaddingLeftThin: 用于大多数需要和左右边进行窄边框隔离的控件左padding.
+  bcPaddingTopThin: 用于大多数需要和上下边进行窄边框隔离的控件padding.
+
+ */
+
+// padding
+$bcPaddingLeft: 0.5em;
+$bcPaddingTop: 0.2em;
+
+$bcPaddingLeftThin: 0.2em;
+$bcPaddingTopThin: 0.1em;
+
+$bcPaddingArea: 0.2em;
+
+// margin
+$bcMarginLeft: 0.5em;
+$bcMarginTop: 0.2em;
+
+$bcMarginArea: 0.2em;
+
+// border-radius
+$bcRadius: 0.2em;
+$bcRadiusSmall: 0.1em;
+$bcRadiusBig: 0.5em;
+
+// line-height. use multi, not em.
+$bcLineHeight: 1.5;
+$bcLineHeightChild: 2.0;
+
+// size
+$bcFontSize: 1.0em;
+$bcFontH1: 2.0 * $bcFontSize;
+$bcFontH2: 1.8 * $bcFontSize;
+$bcFontH3: 1.35 * $bcFontSize;
+$bcFontH4: 1.25 * $bcFontSize;
+$bcFontH5: 1.15 * $bcFontSize;
+$bcFontH6: 1.05 * $bcFontSize;
+
+$bcFontTip: 0.8 * $bcFontSize;
+$bcFontRef: 0.9 * $bcFontSize;
+$bcFontInside: 0.9 * $bcFontSize;
+$bcFontHeader: 1.0 * $bcFontSize;
+
+.bcRadius {
+  border-radius: 0.2em;
+}
+.bcRadiusSmall {
+  border-radius: 0.1em;
+}
+.bcRadiusBig {
+  border-radius: 0.5em;
+}
+
+.bcRect {
+  border-radius: 0;
+}

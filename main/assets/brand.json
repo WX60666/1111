@@ -1,0 +1,23 @@
+{
+  "rspCode": 0,
+  "brands": [
+    {
+      "userID": "efb63718-d44c-4efb-a2cd-67394b93703f",
+      "brandId": "00000000-a36c-4f51-8eb7-e985bbad5ea2",
+      "createUtc": 1492853201435,
+      "status": "Ready",
+      "name": {
+        "en": "OE Life",
+        "ch": "偶忆生活"
+      },
+      "company": {
+        "en": "OE Co., Ltd.",
+        "ch": "偶忆科技"
+      },
+      "icon": {
+        "en": "https://api.oecore.com/rsc/icon/..."
+      },
+      "iconType": "round"
+    }
+  ]
+}

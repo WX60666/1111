@@ -1,0 +1,87 @@
+{
+  "rspCode": 0,
+  "apps": [
+    {
+      "userID": "efb63718-d44c-4efb-a2cd-67394b93703f",
+      "appID": "22220000-a36c-4f51-8eb7-e985bbad5ea2",
+      "version": "v1.0.1",
+      "createUtc": 1492853312401,
+      "lastUpdateUtc": 1492853312401,
+      "status": "Ready",
+      "name": {
+        "en": "new App"
+      },
+      "brandID": "00000000-a36c-4f51-8eb7-e985bbad5ea2",
+      "icon": {
+        "en": "https://api.oecore.com/rsc/icon/..."
+      },
+      "iconType": "round",
+      "splash": {
+        "en": "https://api.oecore.com/rsc/icon/..."
+      },
+      "frameTemplateID": "44440000-a36c-4f51-8eb7-e985bbad5ea2",
+      "frameOption": {
+        "theme": {
+          "color": "#FF0000"
+        },
+        "layout": {
+          "main": "block",
+          "columns": 3
+        },
+        "version": "1.2.3",
+        "buildVersion": {
+          "ios": "3.1.3",
+          "android": "3.5.1"
+        },
+        "supportModels": {
+          "main": [
+            "home",
+            "group"
+          ]
+        }
+      },
+      "config": {}
+    },
+    {
+      "userID": "efb63718-d44c-4efb-a2cd-67394b93703f",
+      "appID": "22220000-a36c-4f51-8eb7-e985bbad5ea2",
+      "version": "v1.0.1",
+      "createUtc": 1492853312401,
+      "lastUpdateUtc": 1492853312401,
+      "status": "Ready",
+      "name": {
+        "en": "new App"
+      },
+      "brandID": "00000000-a36c-4f51-8eb7-e985bbad5ea2",
+      "icon": {
+        "en": "https://api.oecore.com/rsc/icon/..."
+      },
+      "iconType": "round",
+      "splash": {
+        "en": "https://api.oecore.com/rsc/icon/..."
+      },
+      "frameTemplateID": "44440000-a36c-4f51-8eb7-e985bbad5ea2",
+      "frameOption": {
+        "theme": {
+          "color": "#FF0000"
+        },
+        "layout": {
+          "main": "block",
+          "columns": 3
+        },
+        "version": "1.2.3",
+        "buildVersion": {
+          "ios": "3.1.3",
+          "android": "3.5.1"
+        },
+        "supportModels": {
+          "main": [
+            "home",
+            "group"
+          ]
+        }
+      },
+      "config": {}
+    }
+  ]
+}

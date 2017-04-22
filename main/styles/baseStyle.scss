@@ -1,0 +1,26 @@
+
+.clearfix:after {
+  content:".";
+  height:0;
+  visibility:hidden;
+  display:block;
+  clear:both;
+}
+
+$btnBgColor:#ED6C00;
+$btnHoverColor:orangered;
+
+@mixin PlaceHolder($color){
+  input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+    color: $color;
+  }
+  input:-moz-placeholder, textarea:-moz-placeholder {
+    color: $color;
+  }
+  input::-moz-placeholder, textarea::-moz-placeholder {
+    color: $color;
+  }
+  input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+    color: $color;
+  }
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="author" content="rui">
+    <title>WE-SMART 用户管理</title>
+    <!--<link href="./user.css" rel="stylesheet" type="text/css"/>-->
+
+    <!--<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">-->
+    <!--<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">-->
+</head>
+
+<body>
+
+<h1> WE-SAMRT 管理员管理系统 </h1>
+<span id="userInfoTop"> 欢迎使用: {{config.loginID}} </span>
+<hr/>
+
+<div id="mainBoard">
+    <div id="listBoard">
+        <div id="toolBar">
+            <button id="refresh" @click="refresh">刷新</button>
+            <button id="next" @click="getUserList(currPage + 1)">下一页</button>
+            <label>{{currPage + 1}}</label>
+            <button id="previous" @click="getUserList(currPage - 1)">上一页</button>
+
+            <br class="clearAll"/>
+        </div>
+
+        <table id="userTable">
+            <tr class="tr_header">
+                <th class="tc_icon">头像</th>
+                <th>用户名</th>
+                <th>昵称</th>
+                <th>注册时间</th>
+                <th>状态</th>
+            </tr>
+
+            <tr v-for="item in userList" @click="colClicked($index)">
+                <th class="tc_icon">{{item.baseInfo.avatar}}</th>
+                <th>{{item.contactInfo.email||item.contactInfo.phone}}</th>
+                <th>{{item.baseInfo.nickName}}</th>
+                <th>{{item.baseInfo.createDate}}</th>
+                <th>{{item.baseInfo.status}}</th>
+            </tr>
+        </table>
+    </div>
+
+    <div id="infoBoard">
+        <form id="infoForm">
+            <label for="ni_name">用户名</label>
+            <input id="ni_name" name="name" type="text" placeholder="请输入邮箱或手机号"
+                   v-model="currUserInfo.loginID">
+
+            <br/>
+            <label for="ni_pswID">密码</label>
+            <input id="ni_pswID" name="psw" type="text" placeholder="密码需要6-24位, 字母,数字,-_" pattern="^\\w{6,24}$" v-model="currUserInfo.password">
+
+            <br/>
+            <label for="ni_status">状态</label>
+            <select id="ni_status" name="status" v-model="currUserInfo.status">
+                <option value="ready">正常状态</option>
+                <option value="block">暂停状态</option>
+            </select>
+
+            <br/>
+            <label for="ni_nickname">昵称</label>
+            <input id="ni_nickname" name="nickName" type="text" placeholder="昵称最长16中文,32英文" v-model="currUserInfo.nickName">
+
+            <br/>
+            <label for="ni_gender">性别</label>
+            <select id="ni_gender" name="gender" v-model="currUserInfo.gender">
+                <option value="F">男</option>
+                <option value="M">女</option>
+                <option value="U">保密</option>
+            </select>
+
+            <br/>
+            <label for="ni_avatar">头像</label>
+            <input id="ni_avatar" name="avatar" type="text" placeholder="头像链接最长255" v-model="currUserInfo.avatarUri">
+
+            <br/>
+            <label for="ni_birthday">生日</label>
+            <input id="ni_birthday" name="birthday" type="text" placeholder="生日格式: YYYY-MM-DD" pattern="^\\d{4}\\-[0-1][0-9]-[0-3][0-9]$"
+                   v-model="currUserInfo.birthday">
+
+            <br>
+            <input type="submit" name="submit" style="display: none">
+
+        </form>
+
+        <!--<button id="delete">删除</button>-->
+        <button id="search" @click="search()">查找</button>
+        <button id="edit" @click="edit()">更新</button>
+        <button id="add" @click="add()">添加</button>
+    </div>
+
+    <br class="clearAll"/>
+</div>
+
+<!--<script id="modifyPacket" type="text/template"></script>-->
+
+<footer>(C) 2013-2016 深圳市微智电子有限公司 we-smart Co.Ltd. All right reserved.</footer>
+
+<!--<script src="http://cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>-->
+<!--<script src='http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>-->
+
+<!--<script src="./user.js"></script>-->
+
+</body>
+
+</html>

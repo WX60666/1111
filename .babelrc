@@ -1,0 +1,17 @@
+{
+  "presets": [
+    "es2015","flow",
+    ["env", { "modules": false }],
+    "stage-3",
+    "es2015-loose",
+    "es2015-ie"
+  ],
+  "plugins": ["transform-runtime"],
+  "comments": false,
+  "env": {
+    "test": {
+      "presets": ["env", "stage-2"],
+      "plugins": [ "istanbul" ]
+    }
+  }
+}

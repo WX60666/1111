@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+/*
+  Mixin
+  */
+
+@mixin appearance($val) {
+  -webkit-appearance: $val;
+  -moz-appearance: $val;
+  appearance: $val;
+}
+
+/*
+  Functions
+ */
+
+@function alphaBy($c, $multi) {
+  $delta: alpha($c) * $multi - alpha($c);
+
+  @if ($delta > 1) { $delta: 1; }
+  @else if ($delta < -1) { $delta: -1; }
+
+  @if ($delta > 0) { @return opacify( $c, $delta ); }
+  @else { @return transparentize( $c, -$delta ) }
+}
+

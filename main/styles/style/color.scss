@@ -1,0 +1,143 @@
+@charset "UTF-8";
+
+@import "func";
+
+/*
+
+# 颜色用法:
+  主色: 高亮色, 一般用于各种组件的高亮色彩
+  次主色: 次高亮色, 一般用于一些非重要组件的高亮色彩
+  错误: 错误警告色, 一般用于严重错误的颜色
+  警告: 警告色, 一般用于轻微警告的颜色
+
+
+# 颜色分为两大类:
+
+1. 正文颜色:
+  正文颜色: 用于各种正文的色彩
+  正文底纹: 用于各种正文的底纹
+  高亮颜色: 用于各种正文的高亮色彩
+  高亮底纹: 用于各种正文的高亮底纹
+
+2. 组件颜色:
+  组件正文颜色: 用于各种组件内部的正文颜色
+  组件背景: 用于各种组件的背景色
+  组件边框: 用于各种组件的边框颜色
+  以及相应的: 激活色组, 高亮色组
+
+*/
+
+
+$theme: 'light';
+
+/*
+  调整参数
+ */
+$toActive: 0.5;
+$toBorder: 0.5;
+$toNormalWg: 0.3;
+$toNormalTxtBg: 0.08;
+$toLighten: 0.7;
+$toDarken: 1.2;
+$toModel: 0.5;
+
+/*
+ 工具/辅助色
+ */
+$clearColor: rgba(0,0,0,0);
+$background: rgba(0,0,0,0);
+
+/*
+ 主色
+ */
+$primaryText: rgba(0,0,0,0.9);
+$primaryTextBg: rgba(0,0,0,0.0);
+$primaryTextRev: rgba(255,255,255,0.9);
+// $primaryTextBgRev: rgba(0,0,0,0.9);
+
+$primaryColor: rgba(38, 209, 118, 1.0);
+$secondaryColor: rgba(8, 180, 209, 1.0);
+$errorColor: rgba(255, 30, 80, 0.9);
+$warnColor: rgba(255, 92, 0, 0.9);
+$alertColor: $errorColor;
+
+/*
+  以上颜色为'基本色',用于生成下面的各种'应用色'.
+
+  以下颜色用于实际的色彩控制与组件设置.
+ */
+
+/*
+ 文本颜色
+ */
+// normal
+$txtColor: $primaryText;
+$txtBg: $clearColor;
+// highlight
+$txtColorHl: $primaryTextRev;
+$txtBgHl: $primaryColor;
+// light
+$txtColorLight: alphaBy($primaryText, $toLighten);
+
+/*
+ 组件
+ */
+// normal
+$cColor: $primaryTextRev;
+$cBg: alphaBy($primaryText, $toNormalWg);
+$cTxtBg: alphaBy($primaryColor, $toNormalTxtBg);
+$cBorder: $clearColor;
+$cModelBg: alphaBy($primaryTextBg, $toModel);
+// highlight
+$cColorHl: $primaryTextRev;
+$cBgHl: $primaryColor;
+$cTxtBgHl: alphaBy($primaryColor, $toNormalTxtBg + 0.01);
+$cBorderHl: alphaBy($primaryColor, $toBorder);
+// active
+$cColorAct: $cColorHl;
+$cBgAct: $cBgHl;
+$cTxtBgAct: alphaBy($primaryColor, $toNormalTxtBg + 0.02);
+$cBorderAct: alphaBy($cBorderHl, $toBorder);
+
+.ctNormal {
+  color: $txtColor;
+  background: $txtBg;
+}
+
+.ctHighlight {
+  color: $txtColorHl;
+  background: $txtBgHl;
+}
+
+.ctQuote {
+  color: $txtColorLight;
+  background: $txtBg;
+}
+
+.ctTip {
+  color: $txtColorLight;
+  background: $txtBg;
+}
+
+.ccNormal {
+  color: $cColor;
+  border: $cBorder solid 1px;
+  background: $cBg;
+}
+
+.ccActive {
+  color: $cColorAct;
+  border: $cBorderAct solid 1px;
+  background: $cBgAct;
+}
+
+.ccHighlight {
+  color: $cColorHl;
+  border: $cBorderHl solid 1px;
+  background: $cBgHl;
+}
+
+.normalTxt { color: $txtColor; }
+.alertTxt { color: $alertColor; }
+.errorTxt { color: $errorColor; }
+.warnTxt { color: $warnColor; }
